@@ -28,11 +28,11 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
-  let nombre = variables.name == null ? " " : variables.name;
+  let nombre = variables.name == null ? "Nombre" : variables.name;
   let apellido = variables.lastName == null ? " " : variables.lastName;
-  let role = variables.role == null ? " " : variables.role;
-  let city = variables.city == null ? " " : variables.city;
-  let country = variables.country == null ? " " : variables.country;
+  let role = variables.role == null ? "Profesion" : variables.role;
+  let city = variables.city == null ? "Ciudad, " : variables.city + ", ";
+  let country = variables.country == null ? "Pais" : variables.country;
   let posicion =
     variables.socialMediaPosition == "position-right" ? "right" : "left";
   let twitter = variables.twitter == null ? " " : variables.twitter;
@@ -46,7 +46,7 @@ function render(variables = {}) {
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${nombre} ${apellido}</h1>
           <h2>${role}</h2>
-          <h3>${city}, ${country}</h3>
+          <h3>${city} ${country}</h3>
           <ul class="position-${posicion}">
             <li><a href="https://twitter.com/${twitter}"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/${github}"><i class="fab fa-github"></i></a></li>
