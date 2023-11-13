@@ -29,7 +29,7 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   let nombre = variables.name == null ? " " : variables.name;
-  let apellido = variables.lastName == null ? " " : variables.name;
+  let apellido = variables.lastName == null ? " " : variables.lastName;
   let role = variables.role == null ? " " : variables.role;
   let city = variables.city == null ? " " : variables.city;
   let country = variables.country == null ? " " : variables.country;
